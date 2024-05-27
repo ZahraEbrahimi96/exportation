@@ -1,4 +1,4 @@
-create table person
+create table PERSON
 (
     person_id          number primary key,
     person_name        nvarchar2(30),
@@ -12,7 +12,7 @@ create table person
     person_address     nvarchar2(30)
 );
 
-create table company
+create table COMPANY
 (
     company_id           number primary key,
     company_name         nvarchar2(30),
@@ -23,7 +23,7 @@ create table company
     company_phone_number nvarchar2(11)
 );
 
-create table country
+create table COUNTRY
 (
     country_id             number primary key,
     country_name           nvarchar2(30),
@@ -31,7 +31,7 @@ create table country
     country_related_market nvarchar2(30)
 );
 
-create table trade
+create table TRADE
 (
     trade_id              number primary key,
     trade_client          nvarchar2(30),
@@ -42,7 +42,7 @@ create table trade
     trade_invoice         nvarchar2(30)
 );
 
-create table transportation
+create table TRANSPORTATION
 (
     transportation_id        number primary key,
     transportation_direction nvarchar2(30),
@@ -50,7 +50,7 @@ create table transportation
     transportation_freight   number
 );
 
-create table payment
+create table PAYMENT
 (
     payment_id         number primary key,
     payment_total_cost number,
@@ -58,7 +58,19 @@ create table payment
     payment_insurance  number
 );
 
-create table item
+create table INFO
+(
+    info_id             number primary key,
+    info_population     number,
+    info_carRate        number,
+    info_climate        nvarchar2(30),
+    info_accessPath     nvarchar2(30),
+    info_lifeExpectancy nvarchar2(30),
+    info_demand         nvarchar2(30),
+    info_tariff         nvarchar2(30)
+);
+
+create table ITEM
 (
     item_id                number primary key,
     item_name              nvarchar2(30),
@@ -70,6 +82,17 @@ create table item
     item_palletCapacity    number,
     item_cost              number
 );
+
+create table EXPORTTRACING
+(
+    exportTracing_id            number primary key,
+    exportTracing_loadingStatus NUMBER(1),
+    exportTracing_prePayment    NUMBER(1),
+    exportTracing_checkout      NUMBER(1),
+    exportTracing_waybill       nvarchar2(30),
+    exportTracing_invoice       nvarchar2(30)
+);
+
 
 create table country_company
 (
