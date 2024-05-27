@@ -1,7 +1,6 @@
 package exportation.model.entity;
 
 import com.google.gson.Gson;
-import exportation.model.entity.enums.RoleAccess;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,7 +19,7 @@ public class Company {
     private String address;
     private String email;
     private String phoneNumber;
-//    private Person person;
+//private Person person;
 
 
     @Override

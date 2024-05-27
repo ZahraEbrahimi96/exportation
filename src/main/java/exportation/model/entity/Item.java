@@ -24,10 +24,6 @@ public class Item {
     private float wop;             //weightOfPallet
 
 
-//    private Brand brand;
-//    private Type type;
-
-
     @Override
     public String toString() {
         return new Gson().toJson(this);
