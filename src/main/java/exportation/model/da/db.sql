@@ -3,13 +3,12 @@ create table PERSON
     person_id          number primary key,
     person_name        nvarchar2(30),
     person_family      nvarchar2(30),
-    person_gender      varchar2(6),
     person_email       nvarchar2(30),
     person_phoneNumber nvarchar2(11),
-    person_city        nvarchar2(20),
     person_nationalId  nvarchar2(10),
     person_position    nvarchar2(30),
-    person_address     nvarchar2(30)
+    person_address     nvarchar2(30),
+    person_gender      varchar2(6)
 );
 
 create table COMPANY
@@ -30,6 +29,7 @@ create table COUNTRY
     country_phone_code     nvarchar2(4),
     country_related_market nvarchar2(30)
 );
+
 
 create table TRADE
 (

@@ -24,7 +24,7 @@ public class PersonDa implements AutoCloseable, CRUD<Person> {
     public Person save(Person person) throws Exception {
         person.setId(ConnectionProvider.getConnectionProvider().getNextId("PERSON_SEQ"));
         preparedStatement = connection.prepareStatement(
-                "INSERT INTO PERSON (ID,NAME,FAMILY,EMAIL,PHONENUMBER,NATIONALID,POSITION,ADDRESS,GENDER) VALUES (?,?,?,?,?,?,?,?,?)"
+                "INSERT INTO PERSON (person_id,person_name,person_family,person_email,person_phoneNumber,person_nationalId,person_position,person_address,person_gender) VALUES (?,?,?,?,?,?,?,?,?)"
         );
         preparedStatement.setInt(1, person.getId());
         preparedStatement.setString(2, person.getName());
@@ -43,7 +43,7 @@ public class PersonDa implements AutoCloseable, CRUD<Person> {
     @Override
     public Person edit(Person person) throws Exception {
         preparedStatement = connection.prepareStatement(
-                "UPDATE PERSON SET NAME=?, FAMILY=?, EMAIL=?, PHONENUMBER=?, NATIONALID=?,POSITION=?,ADDRESS=?,GENDER=?, WHERE ID=?"
+                "UPDATE PERSON SET person_name=?, person_family=?, person_email=?, person_phoneNumber=?, person_nationalId=?,person_position=?,person_address=?,person_gender=?, WHERE person_id=?"
         );
         preparedStatement.setInt(1, person.getId());
         preparedStatement.setString(2, person.getName());
