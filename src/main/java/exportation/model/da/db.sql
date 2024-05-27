@@ -1,4 +1,4 @@
-create table person_table
+create table person
 (
     person_id          number primary key,
     person_name        nvarchar2(30),
@@ -12,7 +12,7 @@ create table person_table
     person_address     nvarchar2(30)
 );
 
-create table company_table
+create table company
 (
     company_id           number primary key,
     company_name         nvarchar2(30),
@@ -23,7 +23,7 @@ create table company_table
     company_phone_number nvarchar2(11)
 );
 
-create table country_table
+create table country
 (
     country_id             number primary key,
     country_name           nvarchar2(30),
@@ -31,7 +31,7 @@ create table country_table
     country_related_market nvarchar2(30)
 );
 
-create table trade_table
+create table trade
 (
     trade_id              number primary key,
     trade_client          nvarchar2(30),
@@ -50,7 +50,7 @@ create table transportation
     transportation_freight   number
 );
 
-create table payment_table
+create table payment
 (
     payment_id         number primary key,
     payment_total_cost number,
@@ -58,7 +58,7 @@ create table payment_table
     payment_insurance  number
 );
 
-create table item_table
+create table item
 (
     item_id                number primary key,
     item_name              nvarchar2(30),
@@ -74,15 +74,15 @@ create table item_table
 create table country_company
 (
     int number primary key,
-    c_country_id references country_table,
-    c_company_id references company_table
+    c_country_id references country,
+    c_company_id references company
 );
 
 create view country_company_report as
 select *
-from country_table
-         join country_company on country_table.country_id = country_company.c_country_id
-         join company_table on company_table.company_id = country_company.c_company_id
+from country
+         join country_company on country.country_id = country_company.c_country_id
+         join company on company.company_id = country_company.c_company_id
 
 
 -- todo : create sequences
